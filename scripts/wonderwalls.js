@@ -1,3 +1,5 @@
+import { libWrapper } from './shim.js';
+
 Hooks.once('init', async function () {
     libWrapper.register("wonderwalls", "Wall.prototype.draw", newDraw, "OVERRIDE")
     libWrapper.register("wonderwalls", "Wall.prototype._onUpdate", newUpdate, "OVERRIDE")
