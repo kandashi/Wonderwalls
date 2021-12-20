@@ -19,7 +19,7 @@ async function newDraw() {
     this.endpoints = this.addChild(new PIXI.Graphics());
     // Draw wall components
     this.directionIcon = this.data.dir ? this.addChild(this._drawDirection()) : null;
-    this.visibilityIcon = this.data.sense === 0 ? this.addChild(drawVisibility(this.direction)) : null;
+    this.visibilityIcon = this.data.sight === 0 ? this.addChild(drawVisibility(this.direction)) : null;
     this.movementIcon = this.data.move === 0 ? this.addChild(drawMovement(this.direction)) : null;
 
 
