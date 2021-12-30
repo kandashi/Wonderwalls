@@ -22,7 +22,8 @@ async function newDraw() {
     this.visibilityIcon = this.data.sight === 0 ? this.addChild(drawVisibility(this.direction)) : null;
     this.movementIcon = this.data.move === 0 ? this.addChild(drawMovement(this.direction)) : null;
 
-
+    // Draw a door control icon
+    if ( this.isDoor ) this.createDoorControl();
 
     // Draw current wall
     this.refresh();
@@ -77,6 +78,9 @@ function newRefresh() {
         this.movementIcon.position.set(mp2[0], mp2[1]);
         this.movementIcon.tint = wc;
     }
+
+      // Re-position door control icon
+      if ( this.doorControl ) this.doorControl.reposition();
 
     // Update line hit area
     this.line.hitArea = this._getWallHitPolygon(p, lw3);
